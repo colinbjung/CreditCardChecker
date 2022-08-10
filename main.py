@@ -44,17 +44,21 @@ def luhn(sumDigits, cardNum):
 # checks which company corresponds with the credit card
 def whichCompany(cardNum):
   if cardNum[0] == '3' and cardNum[1] == '4' or cardNum[1] == '7':
-    companyName = 'AmericanExpress'
-    return companyName
+    if len(cardNum) == 15:
+      companyName = 'AmericanExpress'
+      return companyName
   if cardNum[0] == '6':
-    companyName = 'Discover'
-    return companyName
+    if 15 < len(cardNum) < 20:
+      companyName = 'Discover'
+      return companyName
   if cardNum[0] == '4':
-    companyName = 'Visa'
-    return companyName
+    if len(cardNum) == 13 or len(cardNum) == 16:
+      companyName = 'Visa'
+      return companyName
   if cardNum[0] == '2' or cardNum[0] == '5':
-    companyName = 'MasterCard'
-    return companyName
+    if len(cardNum) == 16:
+      companyName = 'MasterCard'
+      return companyName
 
 
 # takes in credit card number and returns its validity
