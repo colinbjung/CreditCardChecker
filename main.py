@@ -71,7 +71,8 @@ def cccheck():
   valid = luhn(sumDigits, cardNum)
   if valid:
     print("The credit card number you entered passed the Luhn Check and is therefore a valid credit card number!")
-    print("Your credit card company is {}.".format(companyName))
+    if companyName != None:
+      print("Your credit card company is {}.".format(companyName))
   if not valid:
     print("The credit card number you entered failed the Luhn Check. It's not valid, did you make a typo?")
 
